@@ -31,6 +31,32 @@ public class CocheControlador {
     @GetMapping("buscarPorID/{id}")
     public ResponseEntity<Coche> obtenerPorId(@PathVariable int id) {
         Optional<Coche> coche = cocheServicio.obtenerPorId(id);
-        return (coche.isPresent()) ? ResponseEntity.ok(coche.get()) : ResponseEntity.notFound();
+        /*
+        Tres opciones de realizar la misma operacion. Comprobando que el coche exista:
+
+        return coche.map(c -> ResponseEntity.ok(c)).orElse(ResponseEntity.notFound().build();
+        return coche.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build();
+        return (coche.isPresent()) ? ResponseEntity.ok(coche.get()) : ResponseEntity.notFound().build();
+         */
+        return (coche.isPresent()) ? ResponseEntity.ok(coche.get()) : ResponseEntity.notFound().build(); //.build() para construir la respuesta con todo
     }
+
+    @GetMapping("disponibles")
+    public ResponseEntity<List<Coche>> obtenerDisponibles() {
+        return ResponseEntity.ok(cocheServicio.obtenerDisponibles());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

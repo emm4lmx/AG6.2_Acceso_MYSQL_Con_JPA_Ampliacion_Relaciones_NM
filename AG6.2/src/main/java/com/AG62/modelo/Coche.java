@@ -1,7 +1,7 @@
 package com.AG62.modelo;
 
 import jakarta.persistence.*;
-
+import jakarta.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
