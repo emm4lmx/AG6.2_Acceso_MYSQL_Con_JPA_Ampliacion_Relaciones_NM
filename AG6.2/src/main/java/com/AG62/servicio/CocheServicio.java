@@ -14,7 +14,7 @@ public interface CocheServicio {
     List<Coche> buscarPorRangoPrecio(BigDecimal min, BigDecimal max);
     List<Coche> obtenerDesdeAnio(int anio);
     Coche guardar(Coche coche);
-    Optional<Coche> actualizar(Coche coche);
+    Optional<Coche> actualizar(int id, Coche coche);
     boolean eliminar(int id);
 
 }

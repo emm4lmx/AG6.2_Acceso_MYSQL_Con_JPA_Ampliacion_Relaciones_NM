@@ -31,6 +31,13 @@ public class Coche {
         this.precio = precio;
         this.disponible = disponible;
     }
+    public Coche(String marca, String modelo, int anio, BigDecimal precio, boolean disponible) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+        this.precio = precio;
+        this.disponible = disponible;
+    }
 
     public int getId() {
         return id;

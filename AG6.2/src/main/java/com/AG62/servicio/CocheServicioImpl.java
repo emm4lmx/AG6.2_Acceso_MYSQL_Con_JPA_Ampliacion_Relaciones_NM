@@ -54,7 +54,7 @@ public class CocheServicioImpl implements CocheServicio {
     }
 
     @Override
-    public Optional<Coche> actualizar(Coche coche) {
+    public Optional<Coche> actualizar(int id, Coche coche) {
         Optional<Coche> cocheOptional = cocheRepositorio.findById(coche.getId()); //devuelve Optional (si esta vacio --> empty)
         if (cocheOptional.isEmpty()) return Optional.empty();
         return Optional.of(cocheRepositorio.save(coche));
